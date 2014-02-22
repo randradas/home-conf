@@ -1,22 +1,22 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer:
-"	Roberto Andradas Izquierdo
-"	randradas@gmail.com
+"   Roberto Andradas Izquierdo
+"   randradas@gmail.com
 "
 " Sections:
-"	-> VIM user interface
-"	-> Colors and fonts
-"	-> Files, backups and undo
-"	-> Text, tab and indent
+"   -> VIM user interface
+"   -> Colors and fonts
+"   -> Files, backups and undo
+"   -> Text, tab and indent
 "	
 " Attribution:
-"	This .vimrc file is mostly based on the amix's .vimrc file.
-"	https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
+"   This .vimrc file is mostly based on the amix's .vimrc file.
+"   https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
 "
-"	amix _at_ amix.dk
-"	http://amix.dk/
+"   amix _at_ amix.dk
+"   http://amix.dk/
 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 """"""""""""""""""""""""""""""""
