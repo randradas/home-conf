@@ -5,6 +5,8 @@ Repository for my GNU/Linux home directory
 
 Content
 =======
-vimrc	Vim configuration file
+vimrc	    Vim configuration file
 
-bin/	Home maintenance scripts
+gitconfig   My personal git settings
+
+bin/	    Home maintenance scripts
