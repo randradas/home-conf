@@ -91,9 +91,9 @@ set swapfile
 """"""""""""""""""""""""""""""""
 
 " Use tabs instead of spaces
-set noexpandtab
-" Use spaces instead of tabs
 "set noexpandtab
+" Use spaces instead of tabs
+set expandtab
 
 " Be smart when using tabs ;)
 set smarttab
