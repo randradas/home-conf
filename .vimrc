@@ -58,6 +58,23 @@ set foldcolumn=1
 " Add number line to the ledt
 set nu
 
+" Always show statusline
+set laststatus=2
+
+" Statusline configuration
+set statusline=%F       " Path to the file
+set statusline+=%=      " Switch to the right side
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}] " Show encoding
+set statusline+=-       " Separator
+set statusline+=%y      " Filetype of the file
+set statusline+=-       " Separator
+set statusline+=%2c      " Current column
+set statusline+=/       " Separator
+set statusline+=%l      " Current line
+set statusline+=/       " Separator
+set statusline+=%L      " Total lines
+set statusline+=/       " Separator
+set statusline+=%p      " Total lines
 
 """"""""""""""""""""""""""""""""
 " Colors and fonts
@@ -67,7 +84,8 @@ set nu
 syntax enable
 
 try
-	colorscheme desert
+    colorscheme desert
+    hi StatusLine ctermbg=red ctermfg=black
 catch
 endtry
 
