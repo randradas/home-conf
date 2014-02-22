@@ -1,7 +1,7 @@
 Home
 ====
 
-Repository for some of my GNU/Linux home directory
+Repository for my GNU/Linux home directory
 
 Content
 =======
