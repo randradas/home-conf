@@ -58,6 +58,12 @@ set foldcolumn=1
 " Add number line to the ledt
 set nu
 
+" Set title
+set title
+
+" Show tabs, spaces
+set list
+
 " Always show statusline
 set laststatus=2
 
@@ -67,14 +73,11 @@ set statusline+=%=      " Switch to the right side
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}] " Show encoding
 set statusline+=-       " Separator
 set statusline+=%y      " Filetype of the file
-set statusline+=-       " Separator
-set statusline+=%2c      " Current column
-set statusline+=/       " Separator
-set statusline+=%l      " Current line
-set statusline+=/       " Separator
-set statusline+=%L      " Total lines
-set statusline+=/       " Separator
-set statusline+=%p      " Total lines
+set statusline+=%20c    " Current column
+set statusline+=%5l     " Current line
+set statusline+=%5L     " Total lines
+set statusline+=%5p     " Percentage
+
 
 """"""""""""""""""""""""""""""""
 " Colors and fonts
@@ -85,7 +88,7 @@ syntax enable
 
 try
     colorscheme desert
-    hi StatusLine ctermbg=red ctermfg=black
+    hi StatusLine ctermbg=red ctermfg=white
 catch
 endtry
 
@@ -102,29 +105,26 @@ set ffs=unix,dos,mac
 set backup
 set wb
 set swapfile
-	
+
 
 """"""""""""""""""""""""""""""""
 " Text, tab and indent
 """"""""""""""""""""""""""""""""
 
-" Use tabs instead of spaces
+"Show tabs, trail, invisible chars
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" Tabs ;)
 "set noexpandtab
-" Use spaces instead of tabs
 set expandtab
-
-" Be smart when using tabs ;)
 set smarttab
-
-" 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
 
-" Linebreak
+" Linebreak, indent and wrap
 set lbr
 set tw=79
-
-
 set ai " Auto indent
 set si " Smart indent
-set wrap "Wrap lines
+set nowrap "Wrap lines
