@@ -8,7 +8,7 @@
 "   -> Colors and fonts
 "   -> Files, backups and undo
 "   -> Text, tab and indent
-"	
+"
 " Attribution:
 "   This .vimrc file is mostly based on the amix's .vimrc file.
 "   https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
@@ -78,6 +78,9 @@ set statusline+=%5l     " Current line
 set statusline+=%5L     " Total lines
 set statusline+=%5p     " Percentage
 
+" Cursorline
+set cursorline
+
 
 """"""""""""""""""""""""""""""""
 " Colors and fonts
@@ -86,18 +89,14 @@ set statusline+=%5p     " Percentage
 " Enable syntax highlighting
 syntax enable
 
+" Color schema
 try
     colorscheme desert
     hi StatusLine ctermbg=red ctermfg=white
+    hi CursorLine cterm=NONE ctermbg=red ctermfg=white
 catch
 endtry
 
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
-	
 
 """"""""""""""""""""""""""""""""
 " Files, backups and undo
@@ -105,6 +104,12 @@ set ffs=unix,dos,mac
 set backup
 set wb
 set swapfile
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
 
 
 """"""""""""""""""""""""""""""""
