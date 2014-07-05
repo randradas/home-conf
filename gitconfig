@@ -1,7 +1,7 @@
 [user]
-	name = Roberto Andradas Izquierdo
-	email = randradas@gmail.com
+    name = Roberto Andradas Izquierdo
+    email = randradas@gmail.com
 [core]
-	editor = vim
+    editor = vim
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
