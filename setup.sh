@@ -1,37 +1,26 @@
 #!/bin/bash
 
-#SETUP.SH VARS
-TEMP_DIR="/tmp/tmp.$$"
+__checks(){
+    #is it sourced
+    [[ `basename $0` == `basename ${BASH_SOURCE[0]}` ]] && 
+        echo -e '\e[31msetup.sh should be sourced\e[0m' && 
+        exit 1
+}
 
-#APPS
-APPS_DIR="$HOME/apps"
-VIM_URL='ftp://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2'
-VIM_TMP='./vim'
+__set_env(){
+    echo -e '\e[94mSetting environment...\e[0m'
+}
 
-#CONF FILES
-GITCONFIG='gitconfig'
-VIMRC='vimrc'
+__set_config_files(){
+    echo -e '\e[94mSetting configuration files...\e[0m'
+}
 
-#SET CONFIGURATION
-cp ./$VIMRC $HOME/.$VIMRC
-cp ./$GITCONFIG $HOME/.$GITCONFIG
+__set_apps(){
+    echo -e '\e[94mSetting apps...\e[0m'
+}
 
-#INSTALL APPS
-mkdir -p $APPS_DIR
-mkdir -p $TEMP_DIR
-pushd .
-cd $TEMP_DIR
-pushd .
-mkdir -p $VIM_TMP
-mkdir -p $APPS_DIR/$VIM
-cd $VIM_TMP
-wget $VIM_URL
-bunzip2 *bz2
-tar -xvf *tar
-cd vim74
-./configure --prefix=$HOME/apps/ --with-features=huge --with-compiledby=randradas
-make
-make install
-popd
-rm -rf $VIM_TMP
-popd
+#main
+__checks
+__set_env
+__set_config_files
+__set_apps
