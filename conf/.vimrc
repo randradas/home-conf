@@ -82,6 +82,9 @@ set statusline+=%5p     " Percentage
 " Cursorline
 " set cursorline
 
+" ColorColumn specifies what line you want to :hi. This is related with set tw
+set colorcolumn=80
+
 
 """"""""""""""""""""""""""""""""
 " Colors and fonts
@@ -94,6 +97,7 @@ syntax enable
 try
     colorscheme desert
     hi StatusLine ctermbg=red ctermfg=white
+    hi ColorColumn ctermbg=DarkGray ctermfg=DarkGray
 "    hi CursorLine cterm=NONE ctermbg=red ctermfg=white
 catch
 endtry
@@ -131,6 +135,6 @@ set tabstop=4
 " Linebreak, indent and wrap
 set lbr
 set tw=79
-set ai " Auto indent
-set si " Smart indent
-set nowrap "Wrap lines
+set ai              " Auto indent
+set si              " Smart indent
+set nowrap          " Wrap lines
