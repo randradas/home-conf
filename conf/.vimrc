@@ -18,6 +18,10 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Use Vim settings, rather than Vi settings. Must be first, changes other
+" options
+set nocompatible
+execute pathogen#infect()
 
 """"""""""""""""""""""""""""""""
 " VIM user interface
@@ -82,9 +86,6 @@ set statusline+=%5p     " Percentage
 " Cursorline
 " set cursorline
 
-" ColorColumn specifies what line you want to :hi. This is related with set tw
-set colorcolumn=80
-
 
 """"""""""""""""""""""""""""""""
 " Colors and fonts
@@ -96,9 +97,11 @@ syntax enable
 " Color schema
 try
     colorscheme desert
+"    set background=dark
+"    colorscheme solarized
     hi StatusLine ctermbg=red ctermfg=white
-    hi ColorColumn ctermbg=DarkGray ctermfg=DarkGray
-"    hi CursorLine cterm=NONE ctermbg=red ctermfg=white
+    hi ColorColumn ctermbg=DarkGrey
+"    hi CursorLine cterm=NONE ctermbg=DarkGrey ctermfg=white
 catch
 endtry
 
@@ -120,7 +123,6 @@ set ffs=unix,dos,mac
 """"""""""""""""""""""""""""""""
 " Text, tab and indent
 """"""""""""""""""""""""""""""""
-
 "Show tabs, trail, invisible chars
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
@@ -135,6 +137,10 @@ set tabstop=4
 " Linebreak, indent and wrap
 set lbr
 set tw=79
+set colorcolumn=80
 set ai              " Auto indent
-set si              " Smart indent
+" set si            " Smart indent
 set nowrap          " Wrap lines
+
+" Behaviour
+set backspace=indent,eol,start  " Make backspace works like other apps
