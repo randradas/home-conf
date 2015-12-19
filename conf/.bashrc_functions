@@ -1,5 +1,5 @@
 parse_git_branch ()
-{   
+{
     local GITDIR=`git rev-parse --show-toplevel 2>&1` # Get root directory of git repo
     if [[ "$GITDIR" != '/root' ]] # Don't show status of home directory repo
     then
@@ -8,13 +8,13 @@ parse_git_branch ()
         if [ -n "$BRANCH" ]; then
             echo -e "[$BRANCH]"
         fi
-    else    
+    else
         echo ""
-    fi          
-}               
-            
+    fi
+}
+
 function git_color ()
-{               
+{
     # Get the status of the repo and chose a color accordingly
     local STATUS=`git status 2>&1`
     if [[ "$STATUS" == *'Not a git repository'* ]]
@@ -37,6 +37,3 @@ function git_color ()
         fi
     fi
 }
-
-# Call the above functions inside the PS1 declaration
-export PS1='\[$(git_color)\]$(parse_git_branch)\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$ '
