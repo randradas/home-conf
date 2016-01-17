@@ -1,4 +1,4 @@
-parse_git_branch ()
+function parse_git_branch ()
 {
     local GITDIR=`git rev-parse --show-toplevel 2>&1` # Get root directory of git repo
     if [[ "$GITDIR" != '/root' ]] # Don't show status of home directory repo
