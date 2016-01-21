@@ -1,0 +1,21 @@
+#!/bin/bash
+
+FILE=$1
+
+function print_help {
+    echo "Usage: $0 <input_file>"
+}
+
+if [ "$#" -ne 1 ]; then
+    echo "Illegal number of parameters"
+    print_help
+    exit 1
+fi
+
+if [ ! -e $FILE ]; then
+    echo "$1 file does not exist, nothing to dencrypt"
+    exit 1
+fi
+
+# encrypt it
+gpg $FILE
