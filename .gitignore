@@ -2,8 +2,21 @@
 *
 
 # but not these files...
+!.bash_profile
+!.bashrc
+!.bashrc_lib
 !.gitignore
 !.vimrc
+
+# include these subdirectories too
+!.vim/
+!.vim/ftplugin/
 !.vim/ftplugin/*
+!.config/
+!.config/terminator/
 !.config/terminator/*
+!bin/
 !bin/*
+
+# finally avoid tmp files
+*~
