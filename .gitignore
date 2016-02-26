@@ -4,5 +4,7 @@
 # but not these files...
 !.gitignore
 !.vimrc
+!.vim/ftplugin/*
 !.config/terminator/*
 !bin/*
+

@@ -58,7 +58,7 @@ set t_vb=
 set tm=500
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+" set foldcolumn=1
 
 " Add number line to the ledt
 set nu
@@ -92,18 +92,14 @@ set statusline+=%5p     " Percentage
 """"""""""""""""""""""""""""""""
 
 " Enable syntax highlighting
+filetype plugin indent on
 syntax enable
 
-" Color schema
-try
-    colorscheme desert
-"    set background=dark
-"    colorscheme solarized
-    hi StatusLine ctermbg=red ctermfg=white
-    hi ColorColumn ctermbg=DarkGrey
-"    hi CursorLine cterm=NONE ctermbg=DarkGrey ctermfg=white
-catch
-endtry
+" Theme
+set background=dark
+set t_Co=256                    " Assume your terminal emulator is 256 colors
+colorscheme solarized
+hi ColorColumn ctermbg=Black
 
 
 """"""""""""""""""""""""""""""""
@@ -131,8 +127,8 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 "set noexpandtab
 set expandtab
 set smarttab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 " Linebreak, indent and wrap
 set lbr
@@ -140,7 +136,12 @@ set tw=79
 set colorcolumn=80
 set ai              " Auto indent
 " set si            " Smart indent
-set nowrap          " Wrap lines
+" set nowrap          " Wrap lines
 
 " Behaviour
 set backspace=indent,eol,start  " Make backspace works like other apps
+
+""""""""""""""""""""""""""""""""
+" Maps
+""""""""""""""""""""""""""""""""
+map <C-n> :NERDTreeToggle<CR>
