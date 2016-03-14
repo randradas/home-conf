@@ -31,7 +31,7 @@ execute pathogen#infect()
 set ruler
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " Ignore case when searching
 set ignorecase
@@ -60,21 +60,18 @@ set tm=500
 " Add a bit extra margin to the left
 " set foldcolumn=1
 
-" Add number line to the ledt
+" Add number line to the left
 set nu
 
 " Set title
 set title
 
-" Show tabs, spaces
-set list
-
 " Always show statusline
 set laststatus=2
 
 " Statusline configuration
-set statusline=%F       " Path to the file
-set statusline+=%=      " Switch to the right side
+set statusline=%F                               " Path to the file
+set statusline+=%=                              " Switch to the right side
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}] " Show encoding
 set statusline+=-       " Separator
 set statusline+=%y      " Filetype of the file
@@ -97,7 +94,7 @@ syntax enable
 
 " Theme
 set background=dark
-set t_Co=256                    " Assume your terminal emulator is 256 colors
+set t_Co=256                  " Assume your terminal emulator is 256 colors
 colorscheme solarized
 hi ColorColumn ctermbg=Black
 
@@ -121,21 +118,21 @@ set ffs=unix,dos,mac
 """"""""""""""""""""""""""""""""
 "Show tabs, trail, invisible chars
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:▸·,trail:·,precedes:«,extends:»,eol:↲
 
-" Tabs ;)
-"set noexpandtab
+" Indentation
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
-set shiftwidth=2
-set tabstop=2
+set autoindent
 
 " Linebreak, indent and wrap
-set lbr
 set tw=79
 set colorcolumn=80
-set ai              " Auto indent
-" set si            " Smart indent
+set formatoptions=tcq
+set lbr
 " set nowrap          " Wrap lines
 
 " Behaviour
