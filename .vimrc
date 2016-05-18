@@ -129,7 +129,7 @@ set smarttab
 set autoindent
 
 " Linebreak, indent and wrap
-set tw=79
+set tw=0
 set colorcolumn=80
 set formatoptions=tcq
 set lbr
