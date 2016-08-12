@@ -1,0 +1,10 @@
+#!/bin/bash
+function usage {
+  echo 'e.g: prettyjson ./myfile.json'
+  exit 1
+}
+
+[ $# -gt 1 ] && usage
+[ -z "$1" ] && usage
+
+cat $1 | jq ''
