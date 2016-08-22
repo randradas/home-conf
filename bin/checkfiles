@@ -2,7 +2,7 @@
 
 LOGGER=$(which logger)
 ZENITY=$(which zenity)
-
+ECHO=$(which echo)
 
 function usage {
   echo 'e.g: checkfiles myhost.mydomain.com /home/ftp/pub/inbound/'
@@ -15,6 +15,6 @@ function usage {
 [ -z "$2" ] && usage
 
 FILES=$(ssh $1 ls -1 $2)
-[ ! -z "$FILES" ] && $ZENITY --info --text="Files in bancomerftp/inbound" || $LOGGER "no files found in $1:$2"
+[ ! -z "$FILES" ] && $ECHO "files in $1:$2" || $LOGGER "no files found in $1:$2"
 
 exit 0
