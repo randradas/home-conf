@@ -144,4 +144,3 @@ set backspace=indent,eol,start  " Make backspace works like other apps
 """"""""""""""""""""""""""""""""
 " Maps
 """"""""""""""""""""""""""""""""
-map <C-n> :NERDTreeToggle<CR>
