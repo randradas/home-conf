@@ -21,7 +21,7 @@ function parse_git_branch ()
         # Figure out the current branch, wrap in brackets and return it
         local BRANCH=`git branch --no-color 2>/dev/null | sed -n '/^\*/s/^\* //p'`
         if [ -n "$BRANCH" ]; then
-            echo -e "[$BRANCH]"
+            echo -e "$BRANCH"
         fi
     else
         echo ""
