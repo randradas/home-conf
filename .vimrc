@@ -21,7 +21,10 @@
 " Use Vim settings, rather than Vi settings. Must be first, changes other
 " options
 set nocompatible
+
+" Pathogen
 execute pathogen#infect()
+
 
 """"""""""""""""""""""""""""""""
 " VIM user interface
