@@ -16,3 +16,10 @@ export PS1='\[$(git_color)\]$(parse_git_branch)\[\033[01;32m\]\u@\h\[\033[00m\]:
 # set autocomplete
 complete -F _complete_hosts ssh
 complete -F _complete_hosts host
+
+# alias
+alias git-log="git log --oneline --graph --decorate"
+alias git-pull="git pull --rebase"
+alias git-merge="git merge --no-ff"
+alias git-remote="git remote -v"
+alias git-branch="git branch -av"
