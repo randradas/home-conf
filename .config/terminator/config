@@ -11,6 +11,7 @@
     cursor_color = "#eee8d5"
     background_image = None
     scrollbar_position = disabled
+    scrollback_lines = 10000
 [layouts]
   [[default]]
     [[[child1]]]
