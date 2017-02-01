@@ -43,10 +43,10 @@ RANDOMFILE="/tmp/$(basename $0)-$RANDOM-$(date +%s)"
 
 if [ -z "$SUBSTITUTE" ]
 then
-  cat $1 | jq ''
+  cat $JSONFILE | jq ''
 else
-  cat $1 | jq '' > $RANDOMFILE
-  [ $? -eq 0 ] && mv $RANDOMFILE $1
+  cat $JSONFILE | jq '' > $RANDOMFILE
+  [ $? -eq 0 ] && mv $RANDOMFILE $JSONFILE
 fi
 
 exit 0
