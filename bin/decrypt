@@ -17,5 +17,5 @@ if [ ! -e $FILE ]; then
     exit 1
 fi
 
-# encrypt it
+# dencrypt it
 gpg $FILE
