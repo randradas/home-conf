@@ -1,12 +1,15 @@
 #!/bin/bash
 
 FILE=$1
+NAME=$2
 
 function print_help {
-    echo "Usage: $0 <input_file>"
+    echo "Usage: $0 <input_file> <name>"
+    echo ""
+    echo "e.g: encrypt /tmp/secret.txt johndoe@johndoe.com"
 }
 
-if [ "$#" -ne 1 ]; then
+if [ "$#" -ne 2 ]; then
     echo "Illegal number of parameters"
     print_help
     exit 1
@@ -18,4 +21,4 @@ if [ ! -e $FILE ]; then
 fi
 
 # encrypt it
-gpg --encrypt --sign --armor -r randradas@gmail.com $FILE
+gpg --encrypt --sign --armor -r $NAME $FILE
