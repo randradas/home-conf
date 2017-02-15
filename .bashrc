@@ -11,7 +11,8 @@ fi
 export PATH
 
 # Call functions defined in ~/.bashrc_lib inside the PS1 declaration
-export PS1='\[$(git_color)\][$(parse_git_branch)]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\] \$ '
+#export PS1='\[$(git_color)\][$(parse_git_branch)]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\] \$ '
+export PS1='\[$(git_color)\][$(parse_git_branch)]\[\033[01;32m\]\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\] \$ '
 
 # set autocomplete
 complete -F _complete_hosts ssh
