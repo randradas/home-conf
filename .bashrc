@@ -19,7 +19,7 @@ complete -F _complete_hosts ssh
 complete -F _complete_hosts host
 
 # alias
-alias git-log="git log --oneline --graph --decorate"
+alias git-log="git log --oneline --graph --decorate --all"
 alias git-pull="git pull --rebase"
 alias git-merge="git merge --no-ff"
 alias git-remote="git remote -v"
