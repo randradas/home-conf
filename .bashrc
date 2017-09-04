@@ -25,3 +25,9 @@ alias git-merge="git merge --no-ff"
 alias git-remote="git remote -v"
 alias git-branch="git branch -avv"
 alias clean-virgul="find . -regex \".*~$\" -exec echo rm {} \; -exec rm {} \;"
+alias grep="grep --color"
+alias fucking="sudo"
+
+# golang
+export GOPATH=$HOME/code/randradas/golang
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
