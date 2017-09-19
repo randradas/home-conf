@@ -19,11 +19,6 @@ complete -F _complete_hosts ssh
 complete -F _complete_hosts host
 
 # alias
-alias git-log="git log --oneline --graph --decorate --all"
-alias git-pull="git pull --rebase"
-alias git-merge="git merge --no-ff"
-alias git-remote="git remote -v"
-alias git-branch="git branch -avv"
 alias clean-virgul="find . -regex \".*~$\" -exec echo rm {} \; -exec rm {} \;"
 alias grep="grep --color"
 alias fucking="sudo"

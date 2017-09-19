@@ -1,0 +1,2 @@
+#!/bin/bash
+git log --pretty=format:'%ad %h by %an, %s' --date=iso | sort -r
