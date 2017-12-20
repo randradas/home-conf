@@ -1,2 +1,0 @@
-#!/bin/bash
-cat /etc/fstab|grep glob | head -n 1| awk '{ print $4 }'|awk 'BEGIN { FS = "," } ; { print $4 }'
