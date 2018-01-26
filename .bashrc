@@ -22,7 +22,11 @@ complete -F _complete_hosts host
 alias clean-virgul="find . -regex \".*~$\" -exec echo rm {} \; -exec rm {} \;"
 alias grep="grep --color"
 alias fucking="sudo"
+alias ducks="du -cks * | sort -rn | head"
 
 # golang
 export GOPATH=$HOME/code/randradas/golang
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# aws assume-role
+#function assume-role { eval $( $(which assume-role) $@); }
