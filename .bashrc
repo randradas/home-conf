@@ -22,7 +22,8 @@ complete -F _complete_hosts host
 alias clean-virgul="find . -regex \".*~$\" -exec echo rm {} \; -exec rm {} \;"
 alias grep="grep --color"
 alias fucking="sudo"
-alias ducks="du -cks * | sort -rn | head"
+alias ducks="du -cksh * | sort -rn | head -10"
+alias fishes="find . -type f -printf '%s %p\n'| sort -nr | head -10"
 
 # golang
 export GOPATH=$HOME/code/randradas/golang
