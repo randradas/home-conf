@@ -24,10 +24,8 @@ alias grep="grep --color"
 alias fucking="sudo"
 alias ducks="du -cksh * | sort -rn | head -10"
 alias fishes="find . -type f -printf '%s %p\n'| sort -nr | head -10"
+alias docker_rm_stopped="docker ps -aq --no-trunc | xargs docker rm"
+alias docker_rm_dangling="docker images -q --filter dangling=true | xargs docker rmi"
 
-# golang
-export GOPATH=$HOME/code/randradas/golang
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
-# aws assume-role
-#function assume-role { eval $( $(which assume-role) $@); }
+# log every command
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
