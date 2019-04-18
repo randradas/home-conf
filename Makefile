@@ -1,11 +1,19 @@
-vim-stuff-deploy:
+.DEFAULT_GOAL := all
+.PHONY: all vim terminator bash git gpg
+
+all: vim terminator bash git gpg
+
+vim:
 	./vim/setup.sh
 
-config-stuff-deploy:
+terminator:
 	./config/setup.sh
 
-bash-stuff-deploy:
+bash:
 	./bash/setup.sh
 
-git-stuff-deploy:
+git:
 	./git/setup.sh
+
+gpg:
+	./gpg/setup.sh
