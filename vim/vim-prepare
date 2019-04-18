@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 RANDOM_DIR="/tmp/vim-$RANDOM"
 mkdir -p $RANDOM_DIR
@@ -23,7 +24,6 @@ mv vim-colors-solarized ~/.vim/bundle/
 # deploy vim-puppet
 git clone https://github.com/rodjek/vim-puppet.git
 mv vim-puppet ~/.vim/bundle/
-
 
 # finish
 rm -rf $RANDOM_DIR
