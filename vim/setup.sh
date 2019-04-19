@@ -15,13 +15,10 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle/
 # pathogen
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-# vim-colors-solarized
-git clone git://github.com/altercation/vim-colors-solarized.git
-mv vim-colors-solarized ~/.vim/bundle/
-
-# vim-puppet
-git clone https://github.com/rodjek/vim-puppet.git
-mv vim-puppet ~/.vim/bundle/
+# install some plugins
+git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colores-solarized
+git clone https://github.com/rodjek/vim-puppet.git ~/.vim/bundle/vim-puppet
+git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
 # finish
 rm -rf $RANDOM_DIR
