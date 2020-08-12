@@ -64,7 +64,7 @@ set tm=500
 " set foldcolumn=1
 
 " Add number line to the left
-set nu
+" set nu
 
 " Set title
 set title
@@ -121,12 +121,12 @@ set ffs=unix,dos,mac
 """"""""""""""""""""""""""""""""
 "Show tabs, trail, invisible chars
 set list
-set listchars=tab:▸·,trail:·,precedes:«,extends:»,eol:↲
+set listchars=tab:▸·,trail:·
 
 " Indentation
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set smarttab
 set autoindent
@@ -140,7 +140,3 @@ set lbr
 
 " Behaviour
 set backspace=indent,eol,start  " Make backspace works like other apps
-
-""""""""""""""""""""""""""""""""
-" Maps
-""""""""""""""""""""""""""""""""

@@ -17,8 +17,6 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # install some plugins
 git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colores-solarized
-git clone https://github.com/rodjek/vim-puppet.git ~/.vim/bundle/vim-puppet
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
 # finish
 rm -rf $RANDOM_DIR
