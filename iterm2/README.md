@@ -56,7 +56,7 @@ Use [Solarized](https://ethanschoonover.com/solarized/):
 1. Download Solarized [here](http://ethanschoonover.com/solarized/files/solarized.zip)
 2. Unzip it
 3. Navigate to iTerm2 > Preferences > Profiles > Colors > Color Presets > Import...
-4. Select the color scheme for iTerm2:
+4. Go to the previous unzipped folder and select the color scheme for iTerm2:
 
 ![Color scheme](/iterm2/doc/colorscheme.png)
 
