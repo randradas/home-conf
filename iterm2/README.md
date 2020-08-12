@@ -30,7 +30,7 @@ $ upgrade_oh_my_zsh
 ```sh
 $ vim ~/.zshrc
 ```
-![Change theme](/doc/changetheme.png)
+![Change theme](/iterm2/doc/changetheme.png)
 
 ## Load changes
 ```sh
@@ -57,7 +57,7 @@ Use [Solarized](https://ethanschoonover.com/solarized/):
 2. Unzip it
 3. Navigate to iTerm2 > Preferences > Profiles > Colors > Color Presets > Import...
 4. Select the color scheme for iTerm2:
-![Color scheme](/doc/colorscheme.png)
+![Color scheme](/iterm2/doc/colorscheme.png)
 5. Navigate to iTerm2 > Preferences > Profiles > Colors > Color Presets > Solarized Dark
 
 # Install Oh My Zsh! plugins
@@ -73,7 +73,3 @@ plugins=(
 )
 ..
 ```
-
-
-
-
