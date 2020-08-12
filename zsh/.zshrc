@@ -73,6 +73,9 @@ plugins=(
     zsh-autosuggestions
 )
 
+# Plugins env vars
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
