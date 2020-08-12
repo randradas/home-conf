@@ -3,29 +3,80 @@
 "   Roberto Andradas Izquierdo
 "   randradas@gmail.com
 "
-" Sections:
-"   -> VIM user interface
-"   -> Colors and fonts
-"   -> Files, backups and undo
-"   -> Text, tab and indent
-"
-" Attribution:
-"   This .vimrc file is mostly based on the amix's .vimrc file.
+" Inspiration from:
 "   https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
-"
-"   amix _at_ amix.dk
-"   http://amix.dk/
+"   https://github.com/VundleVim/Vundle.vim
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Use Vim settings, rather than Vi settings. Must be first, changes other
-" options
-set nocompatible
+" This file has two parts. The first one (Vundle) is about configuring Vim
+" plugins with Vundle. The second one (Settings) is for settings.
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  _   _                 _ _
+" | | | |               | | |
+" | | | |_   _ _ __   __| | | ___
+" | | | | | | | '_ \ / _` | |/ _ \
+" \ \_/ / |_| | | | | (_| | |  __/
+"  \___/ \__,_|_| |_|\__,_|_|\___|
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'altercation/vim-colors-solarized'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 " Pathogen
-execute pathogen#infect()
+" execute pathogen#infect()
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  _____      _   _   _
+" /  ___|    | | | | (_)
+" \ `--.  ___| |_| |_ _ _ __   __ _ ___
+"  `--. \/ _ \ __| __| | '_ \ / _` / __|
+" /\__/ /  __/ |_| |_| | | | | (_| \__ \
+" \____/ \___|\__|\__|_|_| |_|\__, |___/
+"                              __/ |
+"                             |___/
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set nocompatible              " be iMproved, required
 """"""""""""""""""""""""""""""""
 " VIM user interface
 """"""""""""""""""""""""""""""""

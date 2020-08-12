@@ -2,12 +2,16 @@
 # flags
 set -e
 
-# install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle/
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-# install vim-solarized
-git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colores-solarized
+# install pathogen
+# curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+# install vim-solarized (not needed when using Vundle)
+# git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
+
+
+# install vundle (pathonge or vundle?, that's a good question :P)
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # .vimrc
 cp vim/.vimrc ~
