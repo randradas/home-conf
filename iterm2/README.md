@@ -59,6 +59,7 @@ Use [Solarized](https://ethanschoonover.com/solarized/):
 4. Select the color scheme for iTerm2:
 
 ![Color scheme](/iterm2/doc/colorscheme.png)
+
 5. Navigate to iTerm2 > Preferences > Profiles > Colors > Color Presets > Solarized Dark
 
 # Install Oh My Zsh! plugins
