@@ -1,8 +1,17 @@
 [[ -f ~/.bashrc_lib ]] && source ~/.bashrc_lib
 
+# PROMPT
+RESET='\[$(tput sgr0)\]'
+GREEN='\[\033[32m\]'
+export PS1="\$?${RESET} \u@\h ${GREEN}\w \[\$(git_color)\]\$(parse_git_branch)${RESET}\\$ "
+
 
 # set history settings
 HISTTIMEFORMAT="%Y%m%d %T "
+
+
+# log every command
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
 
 
 # MY ALIASES
@@ -20,14 +29,6 @@ alias grep="grep --color"
 eval "$(register-python-argcomplete pipx)"
 
 
-# PROMPT
-export PS1="\u@\h \[\e[32m\]\w \[$(_git_color)\]$(_parse_git_branch)\[\e[00m\]\\$ "
-
-
-# log every command
-export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
-
-
 # PATH (manual set by me)
 export PATH=~/.local/bin:$PATH
 
@@ -39,5 +40,5 @@ fi
 
 
 # AWSUME
-complete -F _awsume awsume
+complete -F awsume awsume
 alias awsume=". \$(pyenv which awsume)"
