@@ -1,31 +1,46 @@
 [[ -f ~/.bashrc_lib ]] && source ~/.bashrc_lib
 
+
 # set history settings
 HISTTIMEFORMAT="%Y%m%d %T "
 
-# set PATH so it includes user's private bin if it exists
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin:$PATH
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-export PATH
 
-# Call functions defined in ~/.bashrc_lib inside the PS1 declaration
-#export PS1='\[$(git_color)\][$(parse_git_branch)]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\] \$ '
-export PS1='\[$(git_color)\][$(parse_git_branch)]\[\033[01;32m\]\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\] \$ '
-
-# set autocomplete
-complete -F _complete_hosts ssh
-complete -F _complete_hosts host
-
-# alias
-alias clean-virgul="find . -regex \".*~$\" -exec echo rm {} \; -exec rm {} \;"
+# MY ALIASES
+alias tmux-ls="tmux ls"
+alias tmux-new-session="tmux new -s"
+alias tmux-attach-session="tmux attach -t"
+alias tmux-kill-session="tmux kill-session -t"
+alias tmux-rename-session="tmux rename-session -t" # e.g. tmux rename-session -t 0 database
+alias git-log="git log --pretty=oneline --graph --decorate --all"
 alias grep="grep --color"
-alias fucking="sudo"
-alias ducks="du -cksh * | sort -rn | head -10"
-alias fishes="find . -type f -printf '%s %p\n'| sort -nr | head -10"
-alias docker_rm_stopped="docker ps -aq --no-trunc | xargs docker rm"
-alias docker_rm_dangling="docker images -q --filter dangling=true | xargs docker rmi"
+
+
+# PIPX
+# argcomplete
+eval "$(register-python-argcomplete pipx)"
+
+
+# PROMPT
+#export PS1="\u@\h \[\e[32m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[00m\]\\$ "
+#export PS1="\u@\h \[\e[32m\]\w \[\$(_git_color2)\]\$(_parse_git_branch)\[\e[03m\]\\$ "
+export PS1="\u@\h \[\e[32m\]\w \[$(_git_color)\]$(_parse_git_branch)\[\e[00m\]\\$ "
+#export PS1="\u@\h \[\e[32m\]\w \$(_parse_git_branch)\[\e[03m\]\\$ "
+
 
 # log every command
 export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
+
+
+# PATH (manual set by me)
+export PATH=~/.local/bin:$PATH
+
+
+# PYENV (it must by the end of this file since it manipulate PATH env var)
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+
+# AWSUME
+complete -F _awsume awsume
+alias awsume=". \$(pyenv which awsume)"
