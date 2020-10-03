@@ -1,4 +1,1 @@
-# run .bashrc
-if [ -f "$HOME/.bashrc" ] ; then
-    . $HOME/.bashrc
-fi
+[ -f $HOME/.bashrc ] && . $HOME/.bashrc
