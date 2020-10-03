@@ -1,5 +1,7 @@
+#!/bin/bash
+
 # complete function for awsume
-_awsume() {
+function awsume {
     local cur prev opts
     COMPREPLY=()
     cur="${COMP_WORDS[COMP_CWORD]}"
@@ -10,31 +12,30 @@ _awsume() {
 }
 
 # parse git branch for prompt
-_parse_git_branch() {
+function parse_git_branch {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 # git color function for prompt
-_git_color ()
-{
+function git_color {
     # Get the status of the repo and chose a color accordingly
     local STATUS=`git status 2>&1`
-    if [[ "$STATUS" == *'Not a git repository'* ]]
+    if [[ "$STATUS" == *'not a git repository'* ]]
     then
         echo ""
     else
         if [[ "$STATUS" != *'working tree clean'* ]]
         then
             # red if need to commit
-            echo -e '\e[31m'
+            echo -e '\033[31m'
         else
             if [[ "$STATUS" == *'Your branch is ahead'* ]]
             then
                 # yellow if need to push
-                echo -e '\e[33m'
+                echo -e '\033[33m'
             else
                 # else cyan
-                echo -e '\e[36m'
+                echo -e '\033[36m'
             fi
         fi
     fi
