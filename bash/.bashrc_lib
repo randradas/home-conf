@@ -1,34 +1,21 @@
-_complete_hosts () {
+# complete function for awsume
+_awsume() {
+    local cur prev opts
     COMPREPLY=()
     cur="${COMP_WORDS[COMP_CWORD]}"
-    host_list=`{ 
-        for c in /etc/ssh_config /etc/ssh/ssh_config ~/.ssh/config
-        do [ -r $c ] && sed -n -e 's/^Host[[:space:]]//p' -e 's/^[[:space:]]*HostName[[:space:]]//p' $c
-        done
-        for k in /etc/ssh_known_hosts /etc/ssh/ssh_known_hosts ~/.ssh/known_hosts
-        do [ -r $k ] && egrep -v '^[#\[]' $k|cut -f 1 -d ' '|sed -e 's/[,:].*//g'
-        done
-        sed -n -e 's/^[0-9][0-9\.]*//p' /etc/hosts; }|tr ' ' '\n'|grep -v '*'`
-    COMPREPLY=( $(compgen -W "${host_list}" -- $cur))
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    opts=$(awsume-autocomplete)
+    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
     return 0
 }
 
-function parse_git_branch ()
-{
-    local GITDIR=`git rev-parse --show-toplevel 2>&1` # Get root directory of git repo
-    if [[ "$GITDIR" != '/root' ]] # Don't show status of home directory repo
-    then
-        # Figure out the current branch, wrap in brackets and return it
-        local BRANCH=`git branch --no-color 2>/dev/null | sed -n '/^\*/s/^\* //p'`
-        if [ -n "$BRANCH" ]; then
-            echo -e "$BRANCH"
-        fi
-    else
-        echo ""
-    fi
+# parse git branch for prompt
+_parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-function git_color ()
+# git color function for prompt
+_git_color ()
 {
     # Get the status of the repo and chose a color accordingly
     local STATUS=`git status 2>&1`
@@ -39,15 +26,15 @@ function git_color ()
         if [[ "$STATUS" != *'working tree clean'* ]]
         then
             # red if need to commit
-            echo -e '\033[0;31m'
+            echo -e '\e[31m'
         else
             if [[ "$STATUS" == *'Your branch is ahead'* ]]
             then
                 # yellow if need to push
-                echo -e '\033[0;33m'
+                echo -e '\e[33m'
             else
                 # else cyan
-                echo -e '\033[0;36m'
+                echo -e '\e[36m'
             fi
         fi
     fi

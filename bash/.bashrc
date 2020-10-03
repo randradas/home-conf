@@ -21,10 +21,7 @@ eval "$(register-python-argcomplete pipx)"
 
 
 # PROMPT
-#export PS1="\u@\h \[\e[32m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[00m\]\\$ "
-#export PS1="\u@\h \[\e[32m\]\w \[\$(_git_color2)\]\$(_parse_git_branch)\[\e[03m\]\\$ "
 export PS1="\u@\h \[\e[32m\]\w \[$(_git_color)\]$(_parse_git_branch)\[\e[00m\]\\$ "
-#export PS1="\u@\h \[\e[32m\]\w \$(_parse_git_branch)\[\e[03m\]\\$ "
 
 
 # log every command
