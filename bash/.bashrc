@@ -23,7 +23,6 @@ alias tmux-rename-session="tmux rename-session -t" # e.g. tmux rename-session -t
 alias git-log="git log --pretty=oneline --graph --decorate --all"
 alias grep="grep --color"
 
-
 # PIPX
 # argcomplete
 eval "$(register-python-argcomplete pipx)"
@@ -38,7 +37,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-
 # AWSUME
 complete -F awsume awsume
-alias awsume=". \$(pyenv which awsume)"
+#alias awsume=". \$(pyenv which awsume)"
+alias awsume=". awsume"
